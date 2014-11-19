@@ -22,13 +22,6 @@
     <h:body>
         <ui:composition template="/templates/masterLayout.xhtml">
 
-            <!--            <ui:define name="header"> 
-                            Index Page Side bar right <br/>
-                            Index Page Side bar right <br/>                
-                        </ui:define>  -->
-
-
-
             <ui:define name="header">            
                 <ui:include src="/sections/regHeader.xhtml"/>                 
             </ui:define> 
@@ -40,9 +33,9 @@
                     <h:panelGrid columns="2">
                         First Name: <h:inputText value="#{accountBn.account.firstName}"  class="form-control" />
                         Last Name: <h:inputText value="#{accountBn.account.lastName}" class="form-control" />
-                        Date of birth: <p:calendar id="date" value="#{accountBn.account.dateOfBirth}" styleClass="form-control">                            
+                        Date of birth: <p:calendar id="date" styleClass="ui-calendar-inputStyle" value="#{accountBn.account.dateOfBirth}" >                            
                         </p:calendar> 
-                        SSN: <h:inputText value="#{accountBn.account.ssn}"  class="form-control" />
+                        SSN: <h:inputText style="margin-top:7px;" value="#{accountBn.account.ssn}"  class="form-control" />
                         City: <h:inputText value="#{accountBn.address.city}" class="form-control" />
                         State: <h:selectOneMenu value="#{accountBn.address.state}" class="form-control" >
                             <f:selectItems value="#{accountBn.states}"/>
@@ -56,7 +49,7 @@
                         Height: <h:inputText value="#{accountBn.account.height}" class="form-control"/>
                         Weight: <h:inputText value="#{accountBn.account.weight}" class="form-control"/>
                         Username:  <h:inputText value="#{accountBn.account.userName}" class="form-control"/>
-                        Password: <h:inputText value="#{accountBn.account.password}" class="form-control"/>
+                        Password: <h:inputSecret value="#{accountBn.account.password}" class="form-control"/>
                     </h:panelGrid>
                     <h:commandButton style="margin-left: 80px" class="btn-primary" value="Register" action="#{accountBn.createAccount}"/>
                     <h:commandButton style="margin-left: 80px" class="btn-primary" value="Cancel" action="home"/>

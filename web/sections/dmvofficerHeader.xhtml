@@ -22,16 +22,25 @@ and open the template in the editor.
                     <h:graphicImage library="images" name="header_car.jpg" style="height:7em" />
                     <div id="title">DMV</div>
                     <h:form>
-                        <div id="links" style="color:white">
-                            <h:commandLink value="Register" action="customer/Register" style="margin-right:1em"/>
+                        <div id="links">
+                            <h:commandLink value="Logout" action="/views/index" style="margin-right:1em"/>
                         </div>
                     </h:form>
                 </div>
                 <h:form>
-                    <p:tabMenu style="margin-bottom: 0em" activeIndex="#{param.i}"  >
+                    <p:tabMenu style="margin-bottom: 0em;overflow: hidden" activeIndex="#{param.i}"  >
                         <p:menuitem value="Home"  action="home" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
                             <f:param name="i" value="0" /> 
-                        </p:menuitem>          
+                        </p:menuitem>   
+                        <p:menuitem value="Issue Permit"  action="issuePermit" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
+                            <f:param name="i" value="1" /> 
+                        </p:menuitem> 
+                        <p:menuitem value="View Appointments"  action="viewAppointments" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
+                            <f:param name="i" value="2" /> 
+                        </p:menuitem> 
+                        <p:menuitem value="Issue Liscense"  action="issueLiscense" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
+                            <f:param name="i" value="3" /> 
+                        </p:menuitem> 
                     </p:tabMenu>
                 </h:form>
             </div>

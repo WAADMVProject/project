@@ -8,7 +8,6 @@ package dmv.bean;
 import dmv.db.AddressEntityFacade;
 import dmv.model.AccountEntity;
 import dmv.model.AddressEntity;
-import dmv.service.AccountService2;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -28,8 +27,7 @@ public class CreateAccountBn implements Serializable {
 
     AccountEntity account = new AccountEntity();
     AddressEntity address = new AddressEntity();
-    AccountService2 AccountService2;
-
+   
     private ArrayList<String> states;
 
     @EJB //this annotation causes the container to inject this dependency
@@ -93,8 +91,7 @@ public class CreateAccountBn implements Serializable {
         states.add("Wyoming");
     }
 
-    public CreateAccountBn() throws SQLException {
-        AccountService2 = new AccountService2();
+    public CreateAccountBn() {        
     }
 
     public AccountEntity getAccount() {
@@ -136,19 +133,6 @@ public class CreateAccountBn implements Serializable {
         ejbAccountFacade.create(account);
         return "home";
     }
-
-    public String login() {
-        AccountEntity acc = ejbAccountFacade.getUser(account.getUserName(), account.getPassword());
-        if (acc != null) {
-            if ("customer".equals(acc.getRole())) {               
-                return "customer/home";
-            } else {
-                //redirect to dmv officer home page;
-                return "dmvofficer/home";
-            }
-        }
-        return "";      
-    }
-
+  
 
 }

@@ -28,10 +28,16 @@ and open the template in the editor.
                     </h:form>
                 </div>
                 <h:form>
-                    <p:tabMenu style="margin-bottom: 0em" activeIndex="#{param.i}"  >
-                        <p:menuitem value="Home"  url="http://google.com" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
+                    <p:tabMenu style="margin-bottom: 0em;overflow: hidden" activeIndex="#{param.i}"  >
+                        <p:menuitem value="Home"  action="home" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
                             <f:param name="i" value="0" /> 
-                        </p:menuitem>          
+                        </p:menuitem> 
+                        <p:menuitem value="Make Appointment"  action="makeAppointment" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
+                            <f:param name="i" value="1" /> 
+                        </p:menuitem>    
+                        <p:menuitem value="View Appointments"  action="viewAppointments" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
+                            <f:param name="i" value="2" /> 
+                        </p:menuitem>    
                     </p:tabMenu>
                 </h:form>
             </div>

@@ -7,7 +7,6 @@ package dmv.bean;
 
 import dmv.model.AccountEntity;
 import dmv.model.AppointmentEntity;
-import dmv.service.*;
 import dmv.tobedeleteddomain.ExamTimes;
 import dmv.tobedeleteddomain.StartTime;
 import java.io.Serializable;
@@ -150,7 +149,7 @@ public class makeAppointmentBn implements Serializable {
         ejbAppointmentFacade.create(appointment);
 
         fillTimes();
-        return "home";
+        return "viewAppointments";
     }
 
     public void fillTimes() {
@@ -180,19 +179,6 @@ public class makeAppointmentBn implements Serializable {
             times.add(new SelectItem(time, time));
         }
 
-//        while (examTimes.isEmpty()) {
-//            Calendar cal = Calendar.getInstance();
-//            cal.setTime(date);
-//            cal.add(Calendar.DAY_OF_MONTH, 1);
-//            date = cal.getTime();
-//            examTimes = appointmentService.getExamTimes(date).getExamTimes();
-//            times.clear();
-//            DecimalFormat formatter = new DecimalFormat("00");
-//            for (int i = 0; i < examTimes.size(); i++) {
-//                String time = formatter.format(examTimes.get(i).getHour()) + ":" + formatter.format(examTimes.get(i).getMinute());
-//                times.add(new SelectItem(time, time));
-//            }
-//        }
     }
 
     public ExamTimes getExamTimes(Date date) {

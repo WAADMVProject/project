@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <f:view>
         <f:event type="preRenderView" listener="#{customerAppointmentsBn.retrieveAppointments}"/> 
         <h:head>
@@ -25,19 +26,17 @@
             <ui:composition template="/templates/masterLayout.xhtml">
 
                 <ui:define name="header">            
-                    <ui:include src="/sections/logoutheader.xhtml"/>                 
+                    <ui:include src="/sections/customerHeader.xhtml"/>                 
                 </ui:define> 
                 <ui:define name="content"> 
-                    <h:dataTable value="#{customerAppointmentsBn.datetimes}" var="datetime">
-                        <h:column>
-                            <f:facet name="header">Date</f:facet>
+                    <p:dataTable value="#{customerAppointmentsBn.datetimes}" var="datetime">
+                        <p:column headerText="Date">                            
                             <h:outputText style="width: 10em" value="#{datetime.appointmentDate}" />
-                        </h:column>                         
-                        <h:column>
-                            <f:facet name="header">Time</f:facet>                    
+                        </p:column>                         
+                        <p:column headerText="Time">                                            
                             <h:outputText value="#{datetime.time}"/>
-                        </h:column>                    
-                    </h:dataTable>
+                        </p:column>                    
+                    </p:dataTable>
                 </ui:define> 
             </ui:composition>
 

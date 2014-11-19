@@ -17,6 +17,11 @@
     margin-right: 0em;
     margin-bottom:0em;
     padding-bottom: 0em;
+    height: 9.7em;
+}
+
+#header{
+    height: 9.7em;
 }
 
 #headerImage a{
@@ -57,8 +62,12 @@
     margin-top: 0em;
     margin-left: 0em;
     margin-right: 0em;
-    height: 80px;  
+    margin-bottom:0em;    
     position: relative;
+}
+
+#footer{
+   
 }
 
 #footerImage p{      
@@ -113,4 +122,8 @@
 #item3{
     background-image : url("images/traffic-jam.jpg");
    background-size: 100%;
+}
+
+.ui-calendar-inputStyle input {
+    width:17em !important;
 }

@@ -22,13 +22,13 @@ and open the template in the editor.
                     <h:graphicImage library="images" name="header_car.jpg" style="height:7em" />
                     <h:form>
                         <div id="links">
-                            <h:commandLink value="Logout" action="/views/index" style="margin-right:1em"/>
+                            <h:commandLink value="Login" action="/views/login" style="margin-right:1em"/>
                         </div>
                     </h:form>
                 </div>
                 <h:form>
                     <p:tabMenu style="margin-bottom: 0em" activeIndex="#{param.i}"  >
-                        <p:menuitem value="Home"  url="http://google.com" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
+                        <p:menuitem value="Home"  action="home" style="color:#f720e0; background:url(#{resource['images:black_tea.gif']}) no-repeat; background-position:center">
                             <f:param name="i" value="0" /> 
                         </p:menuitem>          
                     </p:tabMenu>

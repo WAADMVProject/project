@@ -37,13 +37,13 @@
                 <h:form>
                     <h:panelGrid style="margin-top: 1em;  margin-left: 1em" columns="2">
                         <h:outputLabel style="width: 6em" for="username" value="User name" /> 
-                        <h:inputText class="form-control" id="username" value="#{accountBn.account.userName}" />                  
+                        <h:inputText class="form-control" id="username" value="#{loginBn.account.userName}" />                  
                         <h:outputLabel style="  width: 6em" for="password" value="Password" /> 
-                        <h:inputSecret  class="form-control" id="password" value="#{accountBn.account.password}" />
+                        <h:inputSecret  class="form-control" id="password" value="#{loginBn.account.password}" />
                         <h:outputText />
                         <h:panelGroup>
-                            <h:commandButton style="margin-top: 1em" class="btn btn-primary" value="Login" action="#{accountBn.login}" /> 
-                        <h:commandButton style="margin-left: 1em; margin-top: 1em" class="btn btn-primary" value="Cancel" action="http://www.google.com" />  
+                            <h:commandButton style="margin-top: 1em" class="btn btn-primary" value="Login" action="#{loginBn.login}" /> 
+                        <h:commandButton style="margin-left: 1em; margin-top: 1em" class="btn btn-primary" value="Cancel" action="index" />  
                         </h:panelGroup>   
                     </h:panelGrid>
                 </h:form>

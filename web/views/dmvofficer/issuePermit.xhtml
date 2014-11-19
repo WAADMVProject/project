@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
 
         <title>Facelet Title</title>
@@ -20,9 +21,9 @@
 
     <h:body>
         <ui:composition template="/templates/masterLayout.xhtml">
-            <ui:define name="header"> 
-                <ui:include src="/sections/logoutheader.xhtml"/>
-            </ui:define>
+            <ui:define name="header">            
+                <ui:include src="/sections/dmvofficerHeader.xhtml"/>                 
+            </ui:define> 
             <ui:define name="content"> 
                 <h:form>
                     <h:panelGrid style="margin-top: 1em; margin-left: 1em" columns="2">
@@ -32,8 +33,14 @@
                         <h:inputText  class="form-control" id="visionScore" value="#{permitBn.permit.visionScore}" />
                         <h:outputLabel style="  width: 6em" for="writtenScore" value="Written Score" /> 
                         <h:inputText  class="form-control" id="writtenScore" value="#{permitBn.permit.writtenTestScore}"/>
-                        <h:outputLabel style="width: 6em" for="picture" value="Picture" /> 
-                        <h:inputText class="form-control" id="picture" value="#{permitBn.permit.picture}" />   
+                        <h:outputLabel style="width: 6em" for="picture" value="Picture" />
+                     
+                            <h:form id="picture">   
+                                    <p:photoCam widgetVar="pc" listener="#{photoCamView.oncapture}" update="photo"/>
+                                    <p:commandButton type="button" value="Capture" onclick="PF('pc').capture()"/> <br/> 
+                                <p:graphicImage id="photo" name="demo/customerphotos/#{photoCamView.filename}.png" />
+                            </h:form>   
+                        
                         <h:outputLabel style="  width: 6em" for="signature" value="Signature" /> 
                         <h:inputText  class="form-control" id="signature" value="#{permitBn.permit.signature}"/>
                         <h:outputLabel style="  width: 13em" for="dln" value="Driving Liscense Number" /> 

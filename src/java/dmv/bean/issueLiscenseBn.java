@@ -6,7 +6,6 @@
 package dmv.bean;
 
 import dmv.model.LiscenseEntity;
-import dmv.service.liscenseService;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.Calendar;

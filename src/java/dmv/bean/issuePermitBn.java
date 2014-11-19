@@ -7,7 +7,6 @@
 package dmv.bean;
 
 import dmv.model.PermitEntity;
-import dmv.service.permitService;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.Calendar;
@@ -25,11 +24,10 @@ import javax.inject.Named;
 public class issuePermitBn implements Serializable{
     
     private int ssn;
-    PermitEntity permit = new PermitEntity();
-    permitService permitService ;
+    PermitEntity permit = new PermitEntity();  
     
-    public issuePermitBn() throws SQLException{
-        permitService = new permitService();
+    public issuePermitBn() {
+        
     }
     
     @EJB //this annotation causes the container to inject this dependency

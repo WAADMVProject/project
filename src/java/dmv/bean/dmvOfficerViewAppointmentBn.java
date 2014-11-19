@@ -7,9 +7,6 @@ package dmv.bean;
 
 import dmv.model.AccountEntity;
 import dmv.model.AppointmentEntity;
-import dmv.service.*;
-import dmv.tobedeleteddomain.ExamTimes;
-import dmv.tobedeleteddomain.StartTime;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -138,10 +135,12 @@ public class dmvOfficerViewAppointmentBn implements Serializable {
             AppointmentEntity appointment = (AppointmentEntity) it.next();
             CustomDate customDate = new CustomDate();
             
+            DecimalFormat formatter = new DecimalFormat("00");
+            
             Calendar cal = Calendar.getInstance();
             cal.setTime(appointment.getDateTime());
             customDate.setAppointmentDate((cal.get(Calendar.MONTH)+1)+"/"+cal.get(Calendar.DAY_OF_MONTH) + "/" + cal.get(Calendar.YEAR)) ;
-            customDate.setTime(cal.get(Calendar.HOUR)+":"+cal.get(Calendar.MINUTE));
+            customDate.setTime(formatter.format(cal.get(Calendar.HOUR))+":"+ formatter.format(cal.get(Calendar.MINUTE)));
             datetimes.add(customDate);            
         }
     }
