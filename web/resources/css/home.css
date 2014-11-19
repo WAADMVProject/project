@@ -1,0 +1,116 @@
+#overall-content-area {
+    width : 900px;
+    border : 4px solid gray;
+    border-radius: 20px;
+    
+    margin-left : auto;
+    margin-right : auto;
+    overflow: hidden;   
+    
+}
+
+#headerImage{
+    background-image :url("images/header_right.jpg");
+    background-repeat: repeat-x;
+    
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-bottom:0em;
+    padding-bottom: 0em;
+}
+
+#headerImage a{
+    color: white;
+}
+
+#pictureHeader{
+    background-image :url("images/header_right.jpg");
+    background-repeat: repeat-x;
+         
+    position:relative;
+}
+
+#links {
+    float: right;    
+    position: absolute;
+    bottom: 0px;
+    margin:0px;
+    right: 0px;
+    
+}
+
+#title {
+    float: left;    
+    position: absolute;
+    bottom: 0px;
+    margin:0px;
+    left: 3em;
+    color: white;
+    font-size: 5em;
+    font-style: italic;
+    
+}
+
+#footerImage{
+    background-image :url("images/header_right.jpg");
+    background-repeat: repeat-x;
+    margin-top: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+    height: 80px;  
+    position: relative;
+}
+
+#footerImage p{      
+    vertical-align: middle;
+    line-height: 80px;
+    text-align : center;
+}
+
+#footerImage p a{
+    margin-right: 10px;  
+}
+
+
+#body {
+    background-image : url("images/background.jpg");
+}
+
+#myCarousel{
+    overflow:hidden; 
+}
+
+#sidebarLeft{
+    margin-left: 5em;    
+    background:white;
+    float: left;
+}
+
+#sidebarRight{
+    margin-right: 5em;
+    width: 20em;    
+    background:white;
+    float: right;
+}
+
+#itemslist{
+     height: 30em;
+}
+
+ 
+
+#item1{
+    background-image : url("images/Driving-a-car.jpg");
+    background-size: 100%;
+       
+}
+
+#item2{
+    background-image : url("images/Road_signs.gif");
+    background-size: 100%;
+}
+
+#item3{
+    background-image : url("images/traffic-jam.jpg");
+   background-size: 100%;
+}

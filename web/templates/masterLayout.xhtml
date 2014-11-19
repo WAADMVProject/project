@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>        
+        <h:outputStylesheet library="css" name="home.css"/>
+        <style type="text/css">
+            .ui-layout-unit{
+                border: none;
+            }
+        </style>
+
+        <title><ui:insert name="title"/></title>
+
+    </h:head>
+
+    <h:body id="body"> 
+        <p:layout fullPage="true">
+            <p:layoutUnit  position="north">
+                <div id="header">
+                    <ui:insert name="header">
+                        <ui:include src="/sections/header.xhtml"/>
+                    </ui:insert>
+                </div>                
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <div id="content">
+                    <ui:insert name="content"/>
+                </div>                
+            </p:layoutUnit>
+
+            <p:layoutUnit  position="west" size="200" >
+                <div id="sidebarLeft">
+                    <ui:insert name="sideBarLeft">
+                        <ui:include src="/sections/sidebarLeft.xhtml"/>                        
+                    </ui:insert>
+                </div> 
+            </p:layoutUnit>            
+
+            <p:layoutUnit style="margin-right: 5em" position="east" size="200">
+                <div id="sidebarRight">
+                    <ui:insert name="sideBarRight">
+                        <ui:include src="/sections/sidebarRight.xhtml"/>
+                    </ui:insert>
+                </div>                 
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="120">
+                <div id="footer">
+                    <ui:insert name="footer">
+                        <ui:include src="/sections/footer.xhtml"/>
+                    </ui:insert>
+                </div>                  
+            </p:layoutUnit>
+            <ui:debug/>
+        </p:layout>
+    </h:body>
+</html>
